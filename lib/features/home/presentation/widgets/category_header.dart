@@ -17,7 +17,6 @@ class CategoryHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-
           Text(
             categoryName,
             style: Theme.of(context).textTheme.headline1,

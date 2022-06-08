@@ -16,7 +16,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
             (InitialCartEvent event, Emitter<CartState> emit) async {
           emit(CartLoadingState());
 
-          final Either<Failure, List<CartEntity>> failureOrData =
+          final Either<Failure, CartEntity> failureOrData =
           await caseCartData();
           emit(failureOrData.fold(
                   (failure) => CartErrorState(message: _mapFailureToMessage(failure)),

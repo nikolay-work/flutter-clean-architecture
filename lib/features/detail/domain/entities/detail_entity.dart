@@ -4,7 +4,7 @@ class DetailEntity {
   final String camera;
   final bool isFavorites;
   final int price;
-  final int rating;
+  final double rating;
   final String sd;
   final String ssd;
   final String title;

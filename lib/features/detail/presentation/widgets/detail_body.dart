@@ -26,9 +26,9 @@ class DetailBody extends StatelessWidget {
                 height: 10,
               ),
               CarouselOfGoods(
-                imgList: state.detailData[0].images,
+                imgList: state.detailData.images,
               ),
-              Specifications(data: state.detailData[0],),
+              Specifications(data: state.detailData,),
             ],
           ),
         );

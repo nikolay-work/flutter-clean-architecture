@@ -1,6 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:phones_market/core/utils/settings.dart';
 import 'package:phones_market/theme/color_palette.dart';
+
+import '../../../../l10n/locale_keys.g.dart';
 
 class HotSalesItem extends StatelessWidget {
   final List homeStoreData;
@@ -8,7 +11,8 @@ class HotSalesItem extends StatelessWidget {
 
   const HotSalesItem({
     Key? key,
-    required this.homeStoreData, required this.id,
+    required this.homeStoreData,
+    required this.id,
   }) : super(key: key);
 
   @override
@@ -34,7 +38,7 @@ class HotSalesItem extends StatelessWidget {
           homeStoreData[id].isNew
               ? CircleAvatar(
                   child: Text(
-                    'New',
+                    LocaleKeys.newOffer.tr(),
                     style: Theme.of(context).textTheme.caption,
                   ),
                   backgroundColor: ColorPalette.orangeFF6E4E,
@@ -62,7 +66,7 @@ class HotSalesItem extends StatelessWidget {
             child: TextButton(
               onPressed: () => {},
               child: Text(
-                'Buy now!',
+                LocaleKeys.buyNow.tr(),
                 style: Theme.of(context).textTheme.button,
               ),
               style: TextButton.styleFrom(

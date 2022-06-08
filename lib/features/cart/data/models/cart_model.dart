@@ -1,11 +1,11 @@
 import 'package:phones_market/features/cart/domain/entities/cart_entity.dart';
 import 'dart:convert';
 
-List<CartModel> cartModelFromJson(String str) =>
-    List<CartModel>.from(json.decode(str).map((x) => CartModel.fromJson(x)));
-
-String cartModelToJson(List<CartModel> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+// List<CartModel> cartModelFromJson(String str) =>
+//     List<CartModel>.from(json.decode(str).map((x) => CartModel.fromJson(x)));
+//
+// String cartModelToJson(List<CartModel> data) =>
+//     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class CartModel extends CartEntity {
   CartModel({
@@ -21,7 +21,7 @@ class CartModel extends CartEntity {
         );
 
   factory CartModel.fromJson(Map<String, dynamic> json) => CartModel(
-        id: json["_id"],
+        id: json["id"],
         delivery: json["delivery"],
         total: json["total"],
         basket: List<BasketEntity>.from(json["basket"].map((x) => BasketEntity(

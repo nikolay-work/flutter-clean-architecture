@@ -11,7 +11,7 @@ abstract class CartState extends Equatable {
 class CartLoadingState extends CartState {}
 
 class CartLoadedState extends CartState {
-  final List<CartEntity> cartData;
+  final CartEntity cartData;
 
   const CartLoadedState({required this.cartData});
 

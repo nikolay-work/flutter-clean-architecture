@@ -16,10 +16,10 @@ class CartRepositoryImpl implements CartRepository {
   });
 
   @override
-  Future<Either<Failure, List<CartEntity>>> getCartData() async {
+  Future<Either<Failure, CartEntity>> getCartData() async {
     if (await networkInfo.isConnected) {
       try {
-        final remoteDetail = await remoteDataSource.getHomeData();
+        final remoteDetail = await remoteDataSource.getCartData();
         return Right(remoteDetail);
       } on ServerException {
         return Left(ServerFailure());

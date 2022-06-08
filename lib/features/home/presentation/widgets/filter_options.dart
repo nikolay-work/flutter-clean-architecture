@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:phones_market/theme/color_palette.dart';
 
+import '../../../../l10n/locale_keys.g.dart';
 import 'filter_options_item.dart';
 
 class FilterOptions extends StatelessWidget {
@@ -52,7 +54,7 @@ class FilterOptions extends StatelessWidget {
                 ),
               ),
               Text(
-                'Filter options',
+                LocaleKeys.filterOptions.tr(),
                 style: Theme.of(context).textTheme.headline3,
               ),
               SizedBox(
@@ -61,7 +63,7 @@ class FilterOptions extends StatelessWidget {
                 child: TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Done',
+                      LocaleKeys.done.tr(),
                       style: Theme.of(context)
                           .textTheme
                           .headline3
@@ -79,8 +81,8 @@ class FilterOptions extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const FilterOptionsItem(
-            title: 'Brand',
+          FilterOptionsItem(
+            title: LocaleKeys.brand.tr(),
             items: [
               'Samsung',
               'Huawei',
@@ -88,16 +90,16 @@ class FilterOptions extends StatelessWidget {
             ],
           ),
           // TODO Сделать диапазон от 0 до 10000
-          const FilterOptionsItem(
-            title: 'Price',
+          FilterOptionsItem(
+            title: LocaleKeys.price.tr(),
             items: [
               '\$0 - \$100',
               '\$101 - \$300',
               '\$301 - \$500',
             ],
           ),
-          const FilterOptionsItem(
-            title: 'Size',
+          FilterOptionsItem(
+            title: LocaleKeys.size.tr(),
             items: [
               '4.5 to 5.5 inches',
               '5.5 to 6.5 inches',

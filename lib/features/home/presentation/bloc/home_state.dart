@@ -11,7 +11,7 @@ abstract class HomeState extends Equatable {
 class HomeLoadingState extends HomeState {}
 
 class HomeLoadedState extends HomeState {
-  final List<HomeEntity> homeData;
+  final HomeEntity homeData;
 
   const HomeLoadedState({required this.homeData});
 

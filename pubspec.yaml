@@ -45,11 +45,28 @@ dependencies:
  # google_fonts: ^2.3.0
   carousel_slider: ^4.0.0
   intl: ^0.17.0
+  retrofit: ^3.0.1+1
+  dio_cache_interceptor: ^3.2.7
+  dio_cache_interceptor_db_store: ^4.1.1
+  path_provider: ^2.0.0
+  sqlite3_flutter_libs: ^0.5.0
+  firebase_core: ^1.17.0
+  firebase_messaging: ^11.4.0
+  # flutter_local_notifications: ^9.5.3+1
+  overlay_support: ^1.2.0
+  uni_links: ^0.5.1
+  # fluttertoast: ^8.0.9
+  easy_localization: ^3.0.0
+  flutter_map_marker_cluster: ^0.4.4
+  flutter_map_location_marker: ^3.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_native_splash: ^2.0.4
+  retrofit_generator: '>=4.0.0 <5.0.0'
+  build_runner: ^2.1.10
+  json_serializable: '>4.4.0'
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -73,6 +90,7 @@ flutter:
   assets:
     - assets/svg_icons/
   #   - images/a_dot_ham.jpeg
+    - assets/l10n/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

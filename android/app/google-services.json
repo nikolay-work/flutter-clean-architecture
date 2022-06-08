@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1045256489517",
+    "project_id": "phone-market-test-app",
+    "storage_bucket": "phone-market-test-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045256489517:android:b962ebd14d6494280686a4",
+        "android_client_info": {
+          "package_name": "com.example.phones_market"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045256489517-1js9olif8k11qe3nog63nj67dsaor70g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phones_market",
+            "certificate_hash": "dcf51bec3e08badebfa3cc23b0f33f88543619cc"
+          }
+        },
+        {
+          "client_id": "1045256489517-hvunigtoa337k912337snrcqhcofu3sp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5YQ53fz5VoUlYRritpc2x_7Y8MduaQxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045256489517-hvunigtoa337k912337snrcqhcofu3sp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

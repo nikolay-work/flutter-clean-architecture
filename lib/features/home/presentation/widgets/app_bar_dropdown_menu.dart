@@ -17,7 +17,8 @@ class AppBarDropdownMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
-      underline: const SizedBox(),
+        onTap: () => Navigator.pushNamed(context, '/map'),
+        underline: const SizedBox(),
         icon: Container(
           child: SvgPicture.asset(CustomIcons.expandMoreAppBar),
           padding: const EdgeInsets.only(left: 7),
@@ -39,6 +40,7 @@ class AppBarDropdownMenu extends StatelessWidget {
                   value: item.key),
             )
             .toList(),
-        onChanged: (value) {});
+        onChanged: (value) {}
+    );
   }
 }

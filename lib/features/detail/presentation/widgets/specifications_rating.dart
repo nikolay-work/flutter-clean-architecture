@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:phones_market/theme/color_palette.dart';
 
 class SpecificationsRating extends StatelessWidget {
-  final int rating;
+  final double rating;
 
   const SpecificationsRating({
     Key? key,

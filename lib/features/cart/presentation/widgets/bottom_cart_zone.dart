@@ -1,7 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:phones_market/features/cart/domain/entities/cart_entity.dart';
 import 'package:phones_market/theme/color_palette.dart';
+
+import '../../../../l10n/locale_keys.g.dart';
 
 class BottomCartZone extends StatelessWidget {
   final CartEntity data;
@@ -36,7 +40,7 @@ class BottomCartZone extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Total',
+                      LocaleKeys.total.tr(),
                       style: Theme.of(context).textTheme.headline6?.copyWith(
                             fontSize: 15,
                             color: ColorPalette.whiteFFFFFF,
@@ -46,7 +50,7 @@ class BottomCartZone extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      'Delivery',
+                      LocaleKeys.delivery.tr(),
                       style: Theme.of(context).textTheme.headline6?.copyWith(
                             fontSize: 15,
                             color: ColorPalette.whiteFFFFFF,
@@ -63,18 +67,21 @@ class BottomCartZone extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      data.delivery,
-                      style: Theme.of(context).textTheme.headline4?.copyWith(
-                            fontSize: 15,
-                            color: ColorPalette.whiteFFFFFF,
-                          ),
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        NumberFormat.simpleCurrency().format(data.total),
+                        style: Theme.of(context).textTheme.headline4?.copyWith(
+                              fontSize: 15,
+                              color: ColorPalette.whiteFFFFFF,
+                            ),
+                      ),
                     ),
                     const SizedBox(
                       height: 5,
                     ),
                     Text(
-                      NumberFormat.simpleCurrency().format(data.total),
+                      data.delivery,
                       style: Theme.of(context).textTheme.headline4?.copyWith(
                             fontSize: 15,
                             color: ColorPalette.whiteFFFFFF,
@@ -112,7 +119,7 @@ class BottomCartZone extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    'Checkout',
+                    LocaleKeys.checkout.tr(),
                     style: Theme.of(context).textTheme.headline4?.copyWith(
                           fontSize: 20,
                           color: ColorPalette.whiteFFFFFF,

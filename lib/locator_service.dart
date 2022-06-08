@@ -1,5 +1,10 @@
+import 'dart:io';
+
+import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
+import 'package:dio_cache_interceptor_db_store/dio_cache_interceptor_db_store.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:phones_market/core/http_client/retrofit_http_client.dart';
 import 'package:phones_market/core/platform/network_info.dart';
 import 'package:phones_market/features/home/data/datasources/home_local_data_source.dart';
 import 'package:phones_market/features/home/data/datasources/home_remote_data_source.dart';
@@ -8,9 +13,14 @@ import 'package:phones_market/features/home/domain/repositories/home_repository.
 import 'package:phones_market/features/home/domain/usecases/case_home_data.dart';
 import 'package:phones_market/features/home/presentation/bloc/category_bloc.dart';
 import 'package:phones_market/features/home/presentation/bloc/home_bloc.dart';
+import 'package:phones_market/services/fcm.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart' as path;
 
+import 'core/navigator/navigation_service.dart';
 import 'features/cart/data/datasources/cart_remote_data_source.dart';
 import 'features/cart/data/repositories/cart_repository_impl.dart';
 import 'features/cart/domain/repositories/cart_repository.dart';
@@ -104,4 +114,19 @@ Future<void> init() async {
   sl.registerLazySingleton(() => sharedPreferences);
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton(() => InternetConnectionChecker());
+  final dio = Dio();
+  final dbFolder = await getApplicationDocumentsDirectory();
+  final file = File(path.join(dbFolder.path, 'cache.sqlite')).path;
+  dio.interceptors.add(
+    DioCacheInterceptor(options: CacheOptions(
+      store: DbCacheStore(databasePath: file),
+      policy: CachePolicy.forceCache,
+      maxStale: const Duration(
+        days: 1,
+      ),
+    )),
+  );
+  sl.registerLazySingleton(() => RetrofitHttpClient(dio));
+  sl.registerLazySingleton(()=> FCM());
+  sl.registerLazySingleton(() => NavigationService());
 }

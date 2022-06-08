@@ -4,22 +4,34 @@ import 'package:phones_market/features/cart/data/models/cart_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import '../../../../core/http_client/retrofit_http_client.dart';
+
 class CartRemoteDataSource {
-  final http.Client client;
+  final RetrofitHttpClient client;
 
   CartRemoteDataSource({required this.client});
 
-  Future<List<CartModel>> getHomeData() async {
-    final response = await client
-        .get(Uri.parse("https://shopapi-0575.restdb.io/rest/cart"), headers: {
-      'Content-type': 'application/json',
-      'x-apikey': Settings.apikey,
-    });
-    if (response.statusCode == 200) {
-      return List<CartModel>.from(
-          json.decode(response.body).map((x) => CartModel.fromJson(x)));
-    } else {
+  Future<CartModel> getCartData() async {
+    try {
+      return await client.getCartData();
+    } catch (err) {
       throw ServerException();
     }
   }
 }
+
+// class CartRemoteDataSource {
+//   final http.Client client;
+//
+//   CartRemoteDataSource({required this.client});
+//
+//   Future<CartModel> getHomeData() async {
+//     final response = await client
+//         .get(Uri.parse("https://run.mocky.io/v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149"));
+//     if (response.statusCode == 200) {
+//       return CartModel.fromJson(json.decode(response.body));
+//     } else {
+//       throw ServerException();
+//     }
+//   }
+// }

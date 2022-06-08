@@ -16,10 +16,10 @@ class DetailRepositoryImpl implements DetailRepository {
   });
 
   @override
-  Future<Either<Failure, List<DetailEntity>>> getDetailData() async {
+  Future<Either<Failure, DetailEntity>> getDetailData() async {
     if (await networkInfo.isConnected) {
       try {
-        final remoteDetail = await remoteDataSource.getHomeData();
+        final remoteDetail = await remoteDataSource.getDetailData();
         return Right(remoteDetail);
       } on ServerException {
         return Left(ServerFailure());

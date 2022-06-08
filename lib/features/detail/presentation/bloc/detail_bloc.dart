@@ -16,7 +16,7 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
         (InitialDetailEvent event, Emitter<DetailState> emit) async {
       emit(DetailLoadingState());
 
-      final Either<Failure, List<DetailEntity>> failureOrData =
+      final Either<Failure, DetailEntity> failureOrData =
           await caseDetailData();
       emit(failureOrData.fold(
           (failure) => DetailErrorState(message: _mapFailureToMessage(failure)),

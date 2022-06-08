@@ -15,7 +15,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         (InitialHomeEvent event, Emitter<HomeState> emit) async {
       emit(HomeLoadingState());
 
-      final Either<Failure, List<HomeEntity>> failureOrData =
+      final Either<Failure, HomeEntity> failureOrData =
           await caseHomeData();
       emit(failureOrData.fold(
           (failure) => HomeErrorState(message: _mapFailureToMessage(failure)),

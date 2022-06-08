@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
@@ -52,11 +53,14 @@ class MiddleCartZone extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline3?.copyWith(
                           fontSize: 20, color: ColorPalette.whiteFFFFFF),
                     ),
-                    Text(
-                      NumberFormat.simpleCurrency()
-                          .format(data.basket[index].price),
-                      style: Theme.of(context).textTheme.headline3?.copyWith(
-                          fontSize: 20, color: ColorPalette.orangeFF6E4E),
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        NumberFormat.simpleCurrency()
+                            .format(data.basket[index].price),
+                        style: Theme.of(context).textTheme.headline3?.copyWith(
+                            fontSize: 20, color: ColorPalette.orangeFF6E4E),
+                      ),
                     ),
                   ],
                 ),

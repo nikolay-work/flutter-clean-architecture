@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../l10n/locale_keys.g.dart';
 
 class TitleCartPage extends StatelessWidget {
   const TitleCartPage({
@@ -14,7 +17,7 @@ class TitleCartPage extends StatelessWidget {
         bottom: 49,
       ),
       child: Text(
-        'My Cart',
+          LocaleKeys.myCart.tr(),
         style:
         Theme.of(context).textTheme.headline1?.copyWith(fontSize: 35),
       ),

@@ -11,7 +11,7 @@ abstract class DetailState extends Equatable {
 class DetailLoadingState extends DetailState {}
 
 class DetailLoadedState extends DetailState {
-  final List<DetailEntity> detailData;
+  final DetailEntity detailData;
 
   const DetailLoadedState({required this.detailData});
 

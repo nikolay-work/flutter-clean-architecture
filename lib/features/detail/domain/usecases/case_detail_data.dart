@@ -4,13 +4,13 @@ import 'package:phones_market/core/usecases/usecase.dart';
 import 'package:phones_market/features/detail/domain/entities/detail_entity.dart';
 import 'package:phones_market/features/detail/domain/repositories/detail_repository.dart';
 
-class CaseDetailData extends UseCase<List<DetailEntity>> {
+class CaseDetailData extends UseCase<DetailEntity> {
   final DetailRepository detailRepository;
 
   CaseDetailData({required this.detailRepository});
 
   @override
-  Future<Either<Failure, List<DetailEntity>>> call() {
+  Future<Either<Failure, DetailEntity>> call() {
     return detailRepository.getDetailData();
   }
 }

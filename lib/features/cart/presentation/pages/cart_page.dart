@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,6 +9,8 @@ import 'package:phones_market/features/cart/presentation/bloc/cart_bloc.dart';
 import 'package:phones_market/features/cart/presentation/bloc/cart_event.dart';
 import 'package:phones_market/features/cart/presentation/widgets/cart_body.dart';
 import 'package:phones_market/theme/color_palette.dart';
+
+import '../../../../l10n/locale_keys.g.dart';
 
 class CartPage extends StatelessWidget {
   String id = '';
@@ -28,7 +31,7 @@ class CartPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Add address',
+                LocaleKeys.addAddress.tr(),
                 style: Theme.of(context)
                     .textTheme
                     .headline3

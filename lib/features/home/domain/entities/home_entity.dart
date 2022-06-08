@@ -1,13 +1,12 @@
 import 'package:equatable/equatable.dart';
 
-//TODO Нужен ли здесь Equateble? Если нужен, что сравниваем? List?
 class HomeEntity extends Equatable {
-  final String id;
+  // final String id;
   final List<HomeStore> homeStore;
   final List<BestSeller> bestSeller;
 
   const HomeEntity({
-    required this.id,
+    // required this.id,
     required this.homeStore,
     required this.bestSeller,
   });
@@ -17,7 +16,7 @@ class HomeEntity extends Equatable {
     return [homeStore, bestSeller];
   }
 }
-//TODO Нужен ли здесь Equateble?
+
 class HomeStore extends Equatable {
   final int id;
   final bool? isNew;
@@ -47,7 +46,7 @@ class HomeStore extends Equatable {
     ];
   }
 }
-//TODO Нужен ли здесь Equateble?
+
 class BestSeller extends Equatable {
   final int id;
   final bool isFavorites;

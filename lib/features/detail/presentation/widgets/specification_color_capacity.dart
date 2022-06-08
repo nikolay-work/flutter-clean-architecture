@@ -1,8 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:phones_market/core/resources/custom_icons.dart';
 import 'package:phones_market/features/detail/domain/entities/detail_entity.dart';
 import 'package:phones_market/theme/color_palette.dart';
+
+import '../../../../l10n/locale_keys.g.dart';
 
 class SpecificationColorCapacity extends StatefulWidget {
   final DetailEntity data;
@@ -24,7 +27,7 @@ class _SpecificationColorCapacityState
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Select color and capacity',
+          LocaleKeys.selectColorAndCapacity.tr(),
           style: Theme.of(context).textTheme.headline3?.copyWith(fontSize: 16),
         ),
         const SizedBox(

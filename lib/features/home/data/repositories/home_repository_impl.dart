@@ -19,7 +19,7 @@ class HomeRepositoryImpl implements HomeRepository {
   });
 
   @override
-  Future<Either<Failure, List<HomeEntity>>> getHomeData() async {
+  Future<Either<Failure, HomeEntity>> getHomeData() async {
     if (await networkInfo.isConnected) {
       try {
         final remoteHome = await remoteDataSource.getHomeData();

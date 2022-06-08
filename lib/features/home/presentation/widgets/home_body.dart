@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:phones_market/features/home/presentation/bloc/category_bloc.dart';
@@ -5,6 +6,7 @@ import 'package:phones_market/features/home/presentation/bloc/home_bloc.dart';
 import 'package:phones_market/features/home/presentation/bloc/home_state.dart';
 import 'package:phones_market/features/home/presentation/widgets/search_form.dart';
 
+import '../../../../l10n/locale_keys.g.dart';
 import 'best_seller_grid.dart';
 import 'category_header.dart';
 import 'category_menu.dart';
@@ -21,9 +23,9 @@ class HomeBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const CategoryHeader(
-            categoryName: 'Select Category',
-            buttonText: 'view all',
+          CategoryHeader(
+            categoryName: LocaleKeys.selectCategory.tr(),
+            buttonText: LocaleKeys.viewAll.tr(),
           ),
           const SizedBox(
             height: 15,
@@ -33,39 +35,39 @@ class HomeBody extends StatelessWidget {
             return CategoryMenu(activeButtonId: state);
           }),
           const SearchForm(),
-          const CategoryHeader(
-            categoryName: 'Hot sales',
-            buttonText: 'see more',
+          CategoryHeader(
+            categoryName: LocaleKeys.hotSales.tr(),
+            buttonText: LocaleKeys.seeMore.tr(),
           ),
           BlocBuilder<HomeBloc, HomeState>(
               builder: (BuildContext context, state) {
             if (state is HomeLoadedState) {
               // print (state.homeData);
               return HotSalesSlider(
-                homeStoreData: state.homeData[0].homeStore,
+                homeStoreData: state.homeData.homeStore,
               );
             } else if (state is HomeErrorState) {
               // TODO разработать виджет ошибки
-              return Container();
+              return const HotSalesLoading();
             } else {
               return const HotSalesLoading();
             }
             //return HotSales();
           }),
-          const CategoryHeader(
-            categoryName: 'Best Seller',
-            buttonText: 'see more',
+          CategoryHeader(
+            categoryName: LocaleKeys.bestSeller.tr(),
+            buttonText: LocaleKeys.seeMore.tr(),
           ),
           BlocBuilder<HomeBloc, HomeState>(
               builder: (BuildContext context, state) {
             if (state is HomeLoadedState) {
               // print (state.homeData);
               return BestSellerGrid(
-                bestSellerData: state.homeData[0].bestSeller,
+                bestSellerData: state.homeData.bestSeller,
               );
             } else if (state is HomeErrorState) {
               // TODO разработать виджет ошибки
-              return Container();
+              return const HotSalesLoading();
             } else {
               return const HotSalesLoading();
             }

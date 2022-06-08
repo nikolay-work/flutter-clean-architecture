@@ -10,17 +10,17 @@ import 'dart:convert';
 
 class HomeModel extends HomeEntity {
   HomeModel({
-    required id,
+    // required id,
     required homeStore,
     required bestSeller,
   }) : super(
-          id: id,
+          // id: id,
           homeStore: homeStore,
           bestSeller: bestSeller,
         );
 
   factory HomeModel.fromJson(Map<String, dynamic> json) => HomeModel(
-        id: json["_id"],
+        // id: json["_id"],
         homeStore: List<HomeStore>.from(json["home_store"].map((x) => HomeStore(
               id: x["id"],
               isNew: x["is_new"] == null ? false : x["is_new"],
@@ -41,7 +41,7 @@ class HomeModel extends HomeEntity {
       );
 
   Map<String, dynamic> toJson() => {
-        "_id": id,
+        // "_id": id,
         "home_store": List<dynamic>.from(homeStore.map((x) => {
               "id": x.id,
               "is_new": x.isNew == null ? null : x.isNew,

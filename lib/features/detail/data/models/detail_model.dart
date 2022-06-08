@@ -1,9 +1,9 @@
 import 'package:phones_market/features/detail/domain/entities/detail_entity.dart';
 import 'dart:convert';
 
-List<DetailModel> detailModelFromJson(String str) => List<DetailModel>.from(json.decode(str).map((x) => DetailModel.fromJson(x)));
-
-String detailModelToJson(List<DetailModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+// List<DetailModel> detailModelFromJson(String str) => List<DetailModel>.from(json.decode(str).map((x) => DetailModel.fromJson(x)));
+//
+// String detailModelToJson(List<DetailModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class DetailModel extends DetailEntity {
   DetailModel({
@@ -35,7 +35,7 @@ class DetailModel extends DetailEntity {
   );
 
   factory DetailModel.fromJson(Map<String, dynamic> json) => DetailModel(
-    id: json["_id"],
+    id: json["id"],
     cpu: json["CPU"],
     camera: json["camera"],
     isFavorites: json["isFavorites"],

@@ -26,10 +26,10 @@ class CartBody extends StatelessWidget {
               const TitleCartPage(),
               const TopCartZone(),
               MiddleCartZone(
-                data: state.cartData[0],
+                data: state.cartData,
               ),
               BottomCartZone(
-                data: state.cartData[0],
+                data: state.cartData,
               ),
             ],
           ),

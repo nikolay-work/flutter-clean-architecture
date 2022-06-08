@@ -1,8 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:phones_market/core/resources/custom_icons.dart';
 import 'package:phones_market/theme/color_palette.dart';
+
+import '../../../../l10n/locale_keys.g.dart';
 
 class SearchForm extends StatelessWidget {
   const SearchForm({
@@ -37,7 +40,7 @@ class SearchForm extends StatelessWidget {
                 //border: const OutlineInputBorder(),
                 filled: true,
                 fillColor: ColorPalette.whiteFFFFFF,
-                hintText: 'Search',
+                hintText: LocaleKeys.search.tr(),
                 contentPadding:
                     const EdgeInsets.only(left: 54.0, top: 3, bottom: 0),
                 enabledBorder: UnderlineInputBorder(

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,6 +8,8 @@ import 'package:phones_market/core/widgets/app_bar_back_arrow.dart';
 import 'package:phones_market/features/detail/presentation/widgets/detail_body.dart';
 import 'package:phones_market/features/detail/presentation/bloc/detail_bloc.dart';
 import 'package:phones_market/features/detail/presentation/bloc/detail_event.dart';
+
+import '../../../../l10n/locale_keys.g.dart';
 
 class DetailPage extends StatelessWidget {
   int? id;
@@ -33,7 +36,7 @@ class DetailPage extends StatelessWidget {
         ],
         centerTitle: true,
         title: Text(
-          'Product Details',
+          LocaleKeys.productDetails.tr(),
           style: Theme.of(context).textTheme.headline4,
         ),
       ),

@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:phones_market/core/resources/custom_icons.dart';
 
+import '../../../../l10n/locale_keys.g.dart';
 import 'category_button.dart';
 
 class CategoryItem {
@@ -17,11 +19,11 @@ class CategoryItem {
 class CategoryMenu extends StatelessWidget {
   final int activeButtonId;
   final List<CategoryItem> categories = [
-    const CategoryItem("Phones", CustomIcons.categoryPhones),
-    const CategoryItem("Computer", CustomIcons.categoryComputer),
-    const CategoryItem("Health", CustomIcons.categoryHealth),
-    const CategoryItem("Books", CustomIcons.categoryBooks),
-    const CategoryItem("Phones", CustomIcons.categoryPhones),
+    CategoryItem(LocaleKeys.categoryPhones.tr(), CustomIcons.categoryPhones),
+    CategoryItem(LocaleKeys.categoryComputer.tr(), CustomIcons.categoryComputer),
+    CategoryItem(LocaleKeys.categoryHealth.tr(), CustomIcons.categoryHealth),
+    CategoryItem(LocaleKeys.categoryBooks.tr(), CustomIcons.categoryBooks),
+    CategoryItem(LocaleKeys.categoryPhones.tr(), CustomIcons.categoryPhones),
   ];
   CategoryMenu({
     Key? key,
